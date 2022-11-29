@@ -1,0 +1,86 @@
+lab4_1=[*
+    sc_node_class
+        -> concept_8sqrt3cm2;
+        -> concept_length;
+        -> concept_area;
+        -> concept_unit;
+        -> concept_side;
+        -> concept_line_segment;
+        -> concept_trapezium;
+        -> concept_trapezium_area;
+        -> concept_number;
+        -> concept_fixed_value;
+        -> concept_angle;
+        -> concept_acute_angle;
+        -> concept_fixed_measurment;
+        -> concept_60_degress;;
+
+    sc_node_norole_relation
+        -> nrel_angle;
+        -> nrel_inclusion;
+        -> nrel_measurement_in_centimeters;
+        -> nrel_measurement_in_square_centimeters;
+        -> nrel_produck_of_numbers;
+        -> nrel_area;
+        -> nrel_side;
+        -> nrel_measurement_in_degress;
+        -> nrel_exponentiation;;
+
+    concept_number
+        -> 8;
+        -> 3;
+        -> 0.5;
+        -> 60;
+        -> sqrt3;
+        -> 8sqrt3;;
+
+    concept_trapezium
+        => nrel_inclusion: concept_isosceles;;
+
+    concept_isosceles
+        -> trapezium_ABCD;;
+
+    trapezium_ABCD
+        => nrel_side: AB;
+        => nrel_side: CD;
+        => nrel_angle: BAO;
+        => nrel_area: S;;
+    
+    concept_side
+        ->AB;
+        ->CD;;
+    
+    1cm
+        <= concept_unit: nrel_measurement_in_centimeters;
+        <- concept_length;;
+    
+    concept_fixed_value
+        -> concept_60_degress;
+        -> concept_8sqrt3cm2;;
+    
+    concept_fixed_measurment
+        ->nrel_measurement_in_centimeters;
+        ->nrel_measurement_in_degress;
+        ->nrel_measurement_in_square_centimeters;;
+
+    concept_60_degress
+        =>nrel_measurement_in_degress: 60;;
+    
+    BAO 
+        <- concept_acute_angle;
+        <- concept_60_degress;;
+    1degree
+        <=concept_unit: nrel_measurement_in_degress;
+        <-concept_angle;;
+    1cm2
+        <=concept_unit: nrel_measurement_in_square_centimeters;
+        <-concept_area;;
+    
+    ...
+        ->8;
+        ->sqrt3;;
+    8sqrt3
+        <=concept_8sqrt3cm2;
+        <=nrel_produck_of_numbers: ...;;
+
+*];;
