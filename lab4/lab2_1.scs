@@ -1,0 +1,25 @@
+lab2_1=[*
+    sc_node_class
+        ->concept_sc_definition;
+        ->concept_russian_language;;
+    sc_node_norole_relation
+        ->nrel_key_sc_el;
+        ->nrel_accessory;
+        ->nrel_sc_translation;
+        ->nrel_identificator;;
+
+    sc_node_role_relation
+        ->rrel_instance;;
+
+    ...
+        <-concept_sc_definition;
+        <=nrel_sc_translation:...;
+        ->nrel_key_sc_el:nrel_accessory;
+        =>nrel_identificator:[Утверждение(монтировать*, системный блок* ).](*<-concept_russian_language;;*);;
+
+    ...
+        ->rrel_instance:[Есть возможность монтировать компликтующие непосредственно в системный блок.](*<-concept_russian_language;;*);
+        =>nrel_sc_translation:...;;
+
+
+*];;
